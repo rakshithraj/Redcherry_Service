@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DD1C13</color>
+    <color name="colorPrimaryDark">#DD1C13</color>
+    <color name="colorAccent">#DD1C13</color>
+
+    <color name="round_corner_gray">#444242</color>
+    <color name="facebook_text_blue">#3A599A</color>
+    <color name="googleplus_text_red">#DF4930</color>
+    <color name="text_hint_gray">#302e2e</color>
+    <color name="dark_gray">#868686</color>
+    <color name="dialog_button">#FF5A60</color>
+    <color name="header_background">#FF00A2FF</color>
+    <color name="green">#7AC943</color>
+    <color name="list_item_textcolor_gray">#706f6f</color>
+    <color name="list_background_color_lightgray">#FAFAFA</color>
+    <color name="cancel_yellow">#E8C31D</color>
+    <color name="background">#f5f5f5</color>
+    <color name="googleplus">#d0422a</color>
+    <color name="fbcolor">#3a589b</color>
+    <color name="ripplecolor">#40E71D35</color>
+
+    <color name="home_background">#CE282828</color>
+    <color name="sign_in">#DD1C13</color>
+    <color name="sign_in_background">#D82C2C2C</color>
+    <color name="sign_in_edittext">#2B2B2B</color>
+    <color name="trasparent_background">#7F000000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    #2C2C2C
+</resources>

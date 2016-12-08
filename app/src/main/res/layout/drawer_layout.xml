@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sign_in_edittext" >
+    <include layout="@layout/nav_header_home" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/sign_in_edittext"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/lyHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgHome"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_home"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Home"
+                    android:layout_toRightOf="@+id/imgHome"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyAddVechicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgAddVechicle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/car_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvAddVechicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Add Vehicle"
+                    android:layout_toRightOf="@+id/imgAddVechicle"
+                     />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyMyVechicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgMyVechicle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/car_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvMyVechicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="My Vehicle List"
+                    android:layout_toRightOf="@+id/imgMyVechicle"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyMyProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgMyProfile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/user_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvMyProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="My Profile"
+                    android:layout_toRightOf="@+id/imgMyProfile"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lyMyHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgMyHistory"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/list_item_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvMyHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="My History"
+                    android:layout_toRightOf="@+id/imgMyHistory"
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/lyTrackBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgTrackBooking"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/cancel_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvTrackBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Track Booking"
+                    android:layout_toRightOf="@+id/imgTrackBooking"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/lyCancelBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgCancelBooking"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/cancel_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvCancelBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Cancel Booking"
+                    android:layout_toRightOf="@+id/imgCancelBooking"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyTipsForVechicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgTipsForVechicle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/bulb_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvTipsForVechicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Notifications"
+                    android:paddingLeft="50dp"
+                    android:layout_toRightOf="@+id/imgTipsForVechicle"
+                    />
+
+
+                <TextView
+                    android:id="@+id/notificationCount"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@android:color/white"
+                    android:text="1"
+                    android:background="@drawable/notification_count"
+                    android:layout_margin="3dp"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#cac9c9"/>
+
+            <RelativeLayout
+                android:id="@+id/lyRateUs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgRateUs"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/like_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvRateUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Rate Us"
+                    android:layout_toRightOf="@+id/imgRateUs"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lySignOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sign_in_edittext"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imgSignOut"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/sign_out_hover"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:id="@+id/tvSignOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Sign Out"
+                    android:layout_toRightOf="@+id/imgSignOut"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

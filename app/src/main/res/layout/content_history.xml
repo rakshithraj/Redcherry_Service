@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.app.redcherry.HistoryActivity"
+    tools:showIn="@layout/app_bar_history">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/app_background" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content" >
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            app:tabIndicatorColor="@color/colorPrimary"
+            style="@style/CustomTabPageIndicator"
+            app:tabTextAppearance="?android:attr/textAppearanceMedium"
+            android:elevation="10dp"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:layout_alignBottom="@+id/indicator"
+            android:layout_alignTop="@+id/indicator"
+            android:background="#b9b1b1"/>
+
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_below="@+id/relativeLayout"
+        android:background="@color/home_background"
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+
+
+    <LinearLayout
+        android:id="@+id/lyRefersh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_popup_sync" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refersh"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

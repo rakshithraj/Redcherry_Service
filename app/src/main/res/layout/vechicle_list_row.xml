@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:weightSum="10"
+    android:layout_marginBottom="10dp"
+    android:background="@color/trasparent_background"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="3.75">
+
+        <ImageView
+            android:id="@+id/vechicleImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/car_dselect_diesel"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/vechicleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="2323v"/>
+        <TextView
+            android:id="@+id/vechicleSubname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/vechicleNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Reanult"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="4.25">
+
+        <ImageView
+            android:id="@+id/imgRightArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/right_arrow"/>
+
+        <ImageView
+            android:id="@+id/deleteVechicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@android:drawable/ic_menu_delete"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/delete"/>
+        <ImageView
+            android:id="@+id/editVechicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@android:drawable/ic_menu_edit"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/delete"/>
+    </LinearLayout>
+
+</LinearLayout>
