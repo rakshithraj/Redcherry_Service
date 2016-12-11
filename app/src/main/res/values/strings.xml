@@ -105,5 +105,6 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_track_book">TrackBookActivity</string>
+    <string name="pay">Pay</string>
 
 </resources>

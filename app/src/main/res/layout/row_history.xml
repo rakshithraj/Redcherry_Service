@@ -49,10 +49,10 @@
         android:layout_alignBottom="@+id/linearLayout"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/linearLayout"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-
         android:gravity="center_vertical"
-        android:text="Your order success" />
+
+        android:text="Your order success"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -95,15 +95,17 @@
                 android:id="@+id/vechicleName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="2323v"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/servicecenterName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2323v"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
+
             <TextView
                 android:id="@+id/vechicleNumber"
                 android:layout_width="wrap_content"
@@ -126,52 +128,68 @@
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Rs 1700" />
+                android:text="Rs 1700"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView
                 android:id="@+id/tvStatus"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="1dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:background="#ff7701"
                 android:padding="5dp"
-                android:text="sucess" />
+                android:text="sucess"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </LinearLayout>
 
 
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/lyAddReview"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout1"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp"
-        android:layout_marginTop="10dp"
-        android:paddingBottom="5dp"
-        android:orientation="vertical"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
         android:gravity="center"
-        android:background="@color/colorPrimary">
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Add"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Review"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textStyle="bold"
-            android:text="Review" />
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btMakePayment"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/linearLayout1"
+        android:text="@string/pay"
+        />
+
+
 </RelativeLayout>

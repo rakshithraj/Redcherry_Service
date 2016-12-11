@@ -224,7 +224,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
                 tvTitle.setText("My History");
                 break;
             case TRACK_BOOKING:
-                findViewById(R.id.lyMyHistory).setBackgroundColor(Color.parseColor("#DD1C13"));
+                findViewById(R.id.lyTrackBooking).setBackgroundColor(Color.parseColor("#DD1C13"));
                 tvTitle.setText("Track Booking");
                 break;
             case CANCEL_BOOKING:

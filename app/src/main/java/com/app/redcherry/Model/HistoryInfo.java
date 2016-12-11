@@ -10,8 +10,45 @@ import java.io.Serializable;
  * Created by rakshith raj on 25-06-2016.
  */
 public class HistoryInfo implements Serializable {
+    public String getFinal_service_charge() {
+        return final_service_charge;
+    }
+
+    public void setFinal_service_charge(String final_service_charge) {
+        this.final_service_charge = final_service_charge;
+    }
+
+    public String getFinal_price_details() {
+        return final_price_details;
+    }
+
+    public void setFinal_price_details(String final_price_details) {
+        this.final_price_details = final_price_details;
+    }
 
     private String id;
+
+    public String getPay_online() {
+        return pay_online;
+    }
+
+    public void setPay_online(String pay_online) {
+        this.pay_online = pay_online;
+    }
+
+    public String getPaid() {
+        return paid;
+    }
+
+    public void setPaid(String paid) {
+        this.paid = paid;
+    }
+
+    private String pay_online;
+    private String paid;
+    private String final_service_charge;
+    private String final_price_details;
+
 
 
 

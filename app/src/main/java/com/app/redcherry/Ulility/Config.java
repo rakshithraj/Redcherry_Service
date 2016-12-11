@@ -48,5 +48,8 @@ public final class Config {
 
     public static final String RESET_PASSWORD = BASE_URL+"resetpassword";
 
+    public static final String TRACK_BOOKING = BASE_URL+"trackbooking";
+
+
 
 }

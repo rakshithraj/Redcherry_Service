@@ -145,6 +145,7 @@
             android:id="@+id/tvBooked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_gravity="center_vertical"
             android:background="#92efa3"
             android:textColor="@android:color/white"
@@ -160,7 +161,7 @@
         <TextView
             android:id="@+id/tvArrived"
             android:textColor="@android:color/white"
-
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -182,6 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="#92efa3"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:padding="5dp"
             android:text="Completed" />
 
@@ -194,10 +196,11 @@
         <TextView
             android:id="@+id/tvDelivered"
             android:textColor="@android:color/white"
-
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:background="#92efa3"
             android:padding="5dp"
             android:text="Delivered" />

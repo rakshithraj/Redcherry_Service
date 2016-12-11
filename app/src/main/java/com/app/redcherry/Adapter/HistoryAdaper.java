@@ -1,15 +1,19 @@
 package com.app.redcherry.Adapter;
 
 import android.graphics.Color;
+import android.support.v7.widget.ButtonBarLayout;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.redcherry.Interface.HistoryInterface;
+import com.app.redcherry.Interface.PaymentInterface;
 import com.app.redcherry.Model.HistoryInfo;
 import com.app.redcherry.R;
 import com.app.redcherry.Ulility.Constants;
@@ -24,14 +28,21 @@ public class HistoryAdaper extends RecyclerView.Adapter<HistoryAdaper.HistoryHol
     private final ArrayList<HistoryInfo> historyList;
     private static final String PETRL = "Petrol";
     private HistoryInterface historyInterface;
+    PaymentInterface paymentInterface;
+
     public HistoryAdaper(ArrayList<HistoryInfo> historyList) {
         this.historyList = historyList;
     }
 
     public void setOnAddReview(HistoryInterface historyInterface) {
 
-this.historyInterface=historyInterface;
+        this.historyInterface = historyInterface;
 
+    }
+
+    public void setPaymnetInterface(PaymentInterface paymentInterface) {
+
+        this.paymentInterface = paymentInterface;
     }
 
     public static class HistoryHolder extends RecyclerView.ViewHolder {
@@ -40,11 +51,13 @@ this.historyInterface=historyInterface;
         final TextView tvBookingStatus;
         final TextView tvTimming;
         final TextView vechicleName;
-        final TextView vechicleNumber,servicecenterName;
+        final TextView vechicleNumber, servicecenterName;
         final TextView tvPrice;
         final TextView tvStatus;
         final ImageView vechicleImage;
-         final LinearLayout lyAddReview;
+        final LinearLayout lyAddReview;
+        final Button btMakePayment;
+
         public HistoryHolder(View itemView) {
             super(itemView);
             this.itemView = itemView;
@@ -61,7 +74,7 @@ this.historyInterface=historyInterface;
 
             vechicleImage = (ImageView) itemView.findViewById(R.id.vechicleImage);
             lyAddReview = (LinearLayout) itemView.findViewById(R.id.lyAddReview);
-
+            btMakePayment = (Button) itemView.findViewById(R.id.btMakePayment);
 
         }
     }
@@ -80,56 +93,78 @@ this.historyInterface=historyInterface;
 
         HistoryInfo historyInfo = historyList.get(position);
         if (historyInfo != null) {
-                holder.itemView.setVisibility(View.VISIBLE);
-                holder.tvBookingNumber.setText(historyInfo.getBooking_id());
-                // holder.vechicleName.setText(historyInfo.ve());
-                holder.vechicleNumber.setText(historyInfo.getVehicle_number());
+            holder.itemView.setVisibility(View.VISIBLE);
+            holder.tvBookingNumber.setText(historyInfo.getBooking_id());
+            // holder.vechicleName.setText(historyInfo.ve());
+            holder.vechicleNumber.setText(historyInfo.getVehicle_number());
 
 
-            holder.tvTimming.setText(historyInfo.getBooking_date()+"  "+historyInfo.getPickuptime());
+            holder.tvTimming.setText(historyInfo.getBooking_date() + "  " + historyInfo.getPickuptime());
 
             holder.vechicleName.setText(historyInfo.getSub_brand());
             holder.servicecenterName.setText(historyInfo.getBranchname());
 
-                if (historyInfo.getCancel().equals(Constants.BOOKING_CANCEL)) {
-                    holder.tvStatus.setText("Cancelled");
-                    holder.tvStatus.setBackgroundColor(Color.parseColor("#DD1C13"));
-                    holder.tvBookingStatus.setText("Your order is failed");
+            if (historyInfo.getCancel().equals(Constants.BOOKING_CANCEL)) {
+                holder.tvStatus.setText("Cancelled");
+                holder.tvStatus.setBackgroundColor(Color.parseColor("#DD1C13"));
+                holder.tvBookingStatus.setText("Your order is failed");
 
-                } else {
-                    holder.tvStatus.setText("Success");
-                    holder.tvStatus.setBackgroundColor(Color.parseColor("#ff7701"));
-                    holder.tvBookingStatus.setText("Your order is successfull");
+            } else {
+                holder.tvStatus.setText("Success");
+                holder.tvStatus.setBackgroundColor(Color.parseColor("#ff7701"));
+                holder.tvBookingStatus.setText("Your order is successfull");
 
 
-                }
+            }
 
-            if(historyInfo.getBook_type().equals(Constants.Service))
-                holder.tvPrice.setText("RS " + historyInfo.getService_charge());
-            else {
-                holder.tvPrice.setText("RS " + historyInfo.getScharge());
-                holder.tvBookingStatus.setText("Your order is "+historyInfo.getVstatus());
+            if (historyInfo.getBook_type().equals(Constants.Service)) {
+                //  holder.tvPrice.setText("RS " + historyInfo.getService_charge());
+                holder.tvPrice.setText("RS " + historyInfo.getFinal_service_charge());
+            } else {
+                //  holder.tvPrice.setText("RS " + historyInfo.getScharge());
+                holder.tvPrice.setText("RS " + historyInfo.getFinal_service_charge());
+                holder.tvBookingStatus.setText("Your order is " + historyInfo.getVstatus());
 
             }
 
 
-
-
             if (historyInfo.getVehicle_type().equals(Constants.Car)) {
-                    if (historyInfo.getFueltype().equals(PETRL))
-                        holder.vechicleImage.setImageResource(R.mipmap.car_dselect_petrol);
-                    else
-                        holder.vechicleImage.setImageResource(R.mipmap.car_dselect_diesel);
+                if (historyInfo.getFueltype().equals(PETRL))
+                    holder.vechicleImage.setImageResource(R.mipmap.car_dselect_petrol);
+                else
+                    holder.vechicleImage.setImageResource(R.mipmap.car_dselect_diesel);
 
 
+            } else {
+                if (historyInfo.getFueltype().equals(PETRL))
+                    holder.vechicleImage.setImageResource(R.mipmap.bike_dselect_petrol);
+                else
+                    holder.vechicleImage.setImageResource(R.mipmap.bike_dselect_diesel);
+
+            }
+
+
+            if (!TextUtils.isEmpty(historyInfo.getPaid())) {
+                if (historyInfo.getPaid().equals("no")) {
+                    holder.lyAddReview.setVisibility(View.GONE);
                 } else {
-                    if (historyInfo.getFueltype().equals(PETRL))
-                        holder.vechicleImage.setImageResource(R.mipmap.bike_dselect_petrol);
-                    else
-                        holder.vechicleImage.setImageResource(R.mipmap.bike_dselect_diesel);
+                    holder.lyAddReview.setVisibility(View.VISIBLE);
 
                 }
 
+                if (historyInfo.getPay_online().equals("no")) {
+                    holder.btMakePayment.setVisibility(View.GONE);
+                } else {
+                    if (historyInfo.getPaid().equals("no"))
+                        holder.btMakePayment.setVisibility(View.VISIBLE);
+                    else
+                        holder.btMakePayment.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            holder.btMakePayment.setOnClickListener(new onClickItem(historyInfo));
 
             holder.lyAddReview.setOnClickListener(new onClickItem(historyInfo));
 
@@ -147,15 +182,26 @@ this.historyInterface=historyInterface;
     private class onClickItem implements View.OnClickListener {
 
         final HistoryInfo historyInfo;
+
         public onClickItem(HistoryInfo historyInfo) {
-            this.historyInfo=historyInfo;
+            this.historyInfo = historyInfo;
         }
 
         @Override
         public void onClick(View v) {
 
-            if(historyInterface!=null)
-                historyInterface.onAddview(historyInfo);
+            switch (v.getId()) {
+                case R.id.lyAddReview:
+                    if (historyInterface != null)
+                        historyInterface.onAddview(historyInfo);
+                    break;
+                case R.id.btMakePayment:
+                    if (paymentInterface != null)
+                        paymentInterface.onMakePayment(historyInfo);
+                    break;
+            }
+
+
         }
     }
 }

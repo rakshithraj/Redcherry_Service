@@ -25,6 +25,7 @@ import com.app.redcherry.Adapter.HistoryAdaper;
 import com.app.redcherry.Constants.AppGlobal;
 import com.app.redcherry.HistoryActivity;
 import com.app.redcherry.Interface.HistoryInterface;
+import com.app.redcherry.Interface.PaymentInterface;
 import com.app.redcherry.Interface.ServerResponse;
 import com.app.redcherry.Model.HistoryInfo;
 import com.app.redcherry.R;
@@ -50,11 +51,16 @@ public class HistoryFragment extends Fragment implements HistoryInterface {
     private ArrayList<HistoryInfo> historyList = new ArrayList<>();
     private int TYPE;
     private final String[] rating= new String[]{"Hated it","Disliked it","It’s OK","Liked it","Loved it"};
-
-    public static Fragment newInstance(ArrayList<HistoryInfo> historyList, int TYPE) {
+    PaymentInterface paymentInterface;
+    public static Fragment newInstance(ArrayList<HistoryInfo> historyList, int TYPE,PaymentInterface paymentInterface) {
         HistoryFragment historyFragment = new HistoryFragment();
         historyFragment.setArguments(historyList, TYPE);
+        historyFragment.setPaymentInterface(paymentInterface);
         return historyFragment;
+    }
+
+    private void setPaymentInterface(PaymentInterface paymentInterface) {
+        this.paymentInterface=paymentInterface;
     }
 
     private void setArguments(ArrayList<HistoryInfo> historyList, int TYPE) {
@@ -88,6 +94,7 @@ public class HistoryFragment extends Fragment implements HistoryInterface {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         HistoryAdaper adpter = new HistoryAdaper(historyList);
         adpter.setOnAddReview(this);
+        adpter.setPaymnetInterface(paymentInterface);
         recyclerView.setAdapter(adpter);
     }
 

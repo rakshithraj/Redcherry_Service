@@ -41,39 +41,7 @@ public class ConnectWebService {
     public void setOnServerResponse(ServerResponse serverResponse){
         this.serverResponse=serverResponse;
     }
-    public void jsonObjectGetRequest(String url, final Activity activity) {
 
-        String tag_json_obj = "json_obj_req";
-        final ProgressDialog pDialog = new ProgressDialog(activity);
-        pDialog.setMessage("Loading...");
-        pDialog.show();
-
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
-                url, null,
-                new Response.Listener<JSONObject>() {
-
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-
-                        Toast.makeText(activity, "response=" + response, Toast.LENGTH_LONG).show();
-                        pDialog.dismiss();
-                    }
-                }, new Response.ErrorListener() {
-
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-
-                Toast.makeText(activity, "error=" + error, Toast.LENGTH_LONG).show();
-                pDialog.dismiss();
-            }
-        });
-
-// Adding request to request queue
-        AppController.getInstance().addToRequestQueue(jsonObjReq, tag_json_obj);
-
-    }
 
 
     public void jsonArrayGetRequest(String url, final Activity activity) {

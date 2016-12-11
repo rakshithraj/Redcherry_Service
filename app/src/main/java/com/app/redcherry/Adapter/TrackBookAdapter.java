@@ -130,7 +130,7 @@ public static class HistoryHolder extends RecyclerView.ViewHolder {
 
         clearStatus(holder);
         if(!TextUtils.isEmpty(historyInfo.getVstatus()))
-        setStatus(historyInfo.getVstatus(),holder);
+          setStatus(historyInfo.getVstatus(),holder);
         else
             setStatus(historyInfo.getVehicle_status(),holder);
 
@@ -158,7 +158,7 @@ public static class HistoryHolder extends RecyclerView.ViewHolder {
                 holder.tvCompleted.setBackgroundColor(Color.parseColor("#0cca2f"));
 
                 break;
-            case "deliverd":
+            case "delivered":
                 holder.tvBooked.setBackgroundColor(Color.parseColor("#0cca2f"));
                 holder.tvArrived.setBackgroundColor(Color.parseColor("#0cca2f"));
                 holder.tvCompleted.setBackgroundColor(Color.parseColor("#0cca2f"));
